@@ -30,11 +30,7 @@ KLIPPER_PATH="${HOME}/klipper"
 FRIX_BRANCH="main"
 
 
-set -eu
-export LC_ALL=C
 
-# Step 1: Verify that the script is not run as root and Klipper is installed.
-#         Then if it's a first install, warn and ask the user if he is sure to proceed
 function preflight_checks {
     if [ "$EUID" -eq 0 ]; then
         echo "[PRE-CHECK] This script must not be run as root!"
